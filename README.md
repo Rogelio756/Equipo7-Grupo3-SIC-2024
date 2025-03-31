@@ -53,7 +53,7 @@ El modelo demostró una efectividad del F1 = 0.79 identificando situaciones de r
 
 * Predecir probabilidad de accidentes (clasificación). 
 * Estimar severidad potencial (regresión). 
-* Identificar patrones de riesgo (clustering). [cite: 13]
+* Identificar patrones de riesgo (clustering). 
 
 Los principales retos identificados son el desbalance en las clases de severidad y la variabilidad en las condiciones climáticas.
 
