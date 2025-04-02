@@ -1,72 +1,30 @@
-# Sistema Predictivo de Accidentes de Tránsito mediante IA
+# Predicción de Accidentes
 
-## Introducción
+## Descripción
 
-Este proyecto desarrolla un sistema predictivo de accidentes de tránsito integrando técnicas de aprendizaje automático. La seguridad vial es un desafío global con importantes implicaciones sociales.  El sistema aborda tres problemas fundamentales en IA: clasificación (predictor binario de accidentes), regresión (estimación de severidad de accidentes) y agrupamiento (identificación de patrones de riesgo).
+Este proyecto tiene como objetivo analizar datos de accidentes y construir modelos de aprendizaje automático para predecir la cantidad de accidentes en función del tiempo (año y mes). 
+
+## Datos
+
+Los datos utilizados en este proyecto se encuentran en la carpeta `fixed_csv` y consisten en varios archivos CSV que contienen información sobre accidentes. 
 
 ## Metodología
 
-### Datos y Preprocesamiento
-
-Se utilizó un dataset de 15,000 registros con las siguientes variables:
-
-* Características numéricas: Límite de velocidad, densidad vehicular. 
-* Variables categóricas: Condiciones climáticas, tipo de vía. 
-* Variables objetivo: Ocurrencia de accidente (binaria), severidad (numérica).
-
-El flujo de preprocesamiento de datos se detalla en la Figura 1 del documento (flujo\_preprocessing.png).
-
-### Arquitectura del Modelo
-
-El sistema implementa tres enfoques principales:
-
-1.  Clasificación: Random Forest y KNN para predicción binaria.
-2.  Regresión: Modelo lineal para estimar severidad. 
-3.  Agrupamiento: K-means para identificar patrones de riesgo. 
-
-La arquitectura general del modelo se puede observar en la Figura 3 del documento (model\_architecture.png).
+1. **Carga y preparación de datos:** Se cargan y combinan los datos de los archivos CSV. Se crea una columna "time" que representa el tiempo en años y se agregan características adicionales "month_sin" y "month_cos" para capturar la periodicidad mensual.
+2. **Análisis exploratorio:** Se realiza un análisis exploratorio de los datos para comprender la relación entre el tiempo y la cantidad de accidentes.
+3. **Modelado:** Se entrenan cuatro modelos de regresión: Regresión lineal, Bosque aleatorio, XGBoost y Red neuronal (MLP Regressor).
+4. **Evaluación del modelo:** Se evalúa el rendimiento de cada modelo utilizando métricas como MSE, MAE y R².
+5. **Visualización de resultados:** Se visualizan las predicciones de cada modelo en comparación con los valores reales.
 
 ## Resultados
 
-### Desempeño de los Modelos
+Los resultados del análisis y la evaluación del modelo se presentan en el notebook. Se puede observar el rendimiento de cada modelo y comparar sus predicciones.
 
-Los resultados de clasificación se muestran en la siguiente tabla:
+## Conclusiones
 
-| Modelo        | Precisión (Test) | F1-Score |
-| ------------- | ---------------- | -------- |
-| Random Forest | 0.76             | 0.79     |
-| KNN           | 0.73             | 0.72     |
+Este proyecto demuestra la viabilidad de utilizar modelos de aprendizaje automático para predecir la cantidad de accidentes en función del tiempo. Los resultados obtenidos pueden ser útiles para la toma de decisiones en la prevención de accidentes.
 
-Figura 2 en el documento (features\_importancia.png) muestra la importancia de las características para el modelo de Random Forest. 
+## Instrucciones de uso
 
-### Análisis de Agrupamiento
-
-Se identificaron tres clusters principales:
-
-* Cluster 1: Accidentes nocturnos en condiciones lluviosas.
-* Cluster 2: Colisiones múltiples en horas pico. 
-* Cluster 3: Incidentes leves en zonas escolares.
-
-## Discusión y Conclusiones
-
-El modelo demostró una efectividad del F1 = 0.79 identificando situaciones de riesgo. La integración de múltiples técnicas permite:
-
-* Predecir probabilidad de accidentes (clasificación). 
-* Estimar severidad potencial (regresión). 
-* Identificar patrones de riesgo (clustering). 
-
-Los principales retos identificados son el desbalance en las clases de severidad y la variabilidad en las condiciones climáticas.
-
-## Implementación Técnica
-
-El código del proyecto está disponible en [https://github.com/amg-abdiel](https://github.com/amg-abdiel) e incluye:
-
-* Jupyter Notebook completo.
-* Conjunto de datos procesado. 
-* Modelos pre-entrenados. 
-
-## Referencias
-
-1.  Almanza, M. et al. (2021). Traffic Accident Prediction Using Machine Learning. IEEE Transactions on ITS.
-2.  Chen, L. (2022). Ensemble Methods for Road Safety Analytics. Journal of Transportation Engineering.
-3.  Kumar, P. (2020). Spatial-Temporal Patterns in Traffic Data. Accident Analysis & Prevention.
+1. Descarga los archivos del proyecto.
+2. Asegúrate de tener las bibliotecas necesarias instaladas (pandas, scikit-learn, xgboost, etc.).
