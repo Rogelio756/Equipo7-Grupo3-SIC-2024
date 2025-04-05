@@ -1,33 +1,142 @@
-# Repositorio Equipo 7 Samsung Innovation Campus
+# Sistema Predictivo de Accidentes de Tránsito mediante IA
 
-Este repositorio contiene archivos CSV  utilizados por el proyecto Equipo 7.
+## Objetivo del Proyecto
 
-**¡Importante!**
+Aplicar los conocimientos y habilidades adquiridos en el curso SIC para desarrollar un modelo predictivo de inteligencia artificial (IA), implementando algoritmos de Machine Learning como **Random Forest** y **KNN** para estimar la probabilidad de que en un accidente de tránsito haya personas heridas, a partir de datos históricos. Esto con el objetivo de mejorar la precisión en la identificación de patrones y factores de riesgo.
 
-Para entender el contenido y la organización de los datos, **es fundamental revisar las diferentes ramas de este repositorio.**
+---
 
-## Estructura de Ramas y Archivos CSV
+## Enlace al Repositorio de GitHub
 
-Cada rama en este repositorio puede contener un conjunto diferente de archivos CSV, representando distintas versiones de los datos, funcionalidades específicas o etapas de desarrollo.
+[**https://github.com/Rogelio756/Equipo7-Grupo3-SIC-2024**](https://github.com/Rogelio756/Equipo7-Grupo3-SIC-2024)
 
-**Para comprender los archivos CSV presentes en una rama en particular, por favor sigue estos pasos:**
+---
 
-1.  **Cambia a la rama que deseas explorar:** Utiliza el comando `git checkout <nombre_de_la_rama>` en tu terminal.
-2.  **Explora los archivos CSV:** Una vez en la rama, podrás ver la lista de archivos `.csv`.
-3.  **Revisa el contenido de los archivos CSV:** Abre los archivos con un editor de texto o una herramienta de hojas de cálculo para entender:
-    * **Las columnas presentes en cada archivo.**
-    * **El tipo de datos que contiene cada columna.**
-    * **La relación entre los archivos CSV dentro de la misma rama (si existe).**
-    * **Posibles convenciones de nombrado de los archivos.**
+## Instrucciones de Instalación y Uso
 
-**En resumen, la estructura y el contenido de los archivos CSV varían entre las diferentes ramas.** No hay un único conjunto de archivos CSV para todo el repositorio.
 
-## Cómo Contribuir
 
-Si deseas contribuir a este proyecto, por favor crea una nueva rama a partir de la rama principal (`main` o `master`, según sea el caso) y agrega o modifica los archivos CSV allí. Considera incluir un archivo `README.md` dentro de tu rama si la estructura o el propósito de tus archivos CSV son complejos o requieren explicación adicional.
+### 1. Requisitos Previos
 
-## Contacto
+Asegúrate de tener instalado lo siguiente:
 
-Equipo 7 Samsung Innovation Campus 2024---
+- **Python 3.x**  
+  [https://www.python.org/downloads/](https://www.python.org/downloads/)
+- **pip** (gestor de paquetes de Python)
+- **Git**  
+  [https://git-scm.com/downloads](https://git-scm.com/downloads)
 
-**¡Gracias por nuestros archivos!**
+### 2. Clonar el Repositorio
+
+Abre una terminal y ejecuta:
+
+```bash
+git clone https://github.com/Rogelio756/Equipo7-Grupo3-SIC-2024
+cd Equipo7-Grupo3-SIC-2024
+```
+
+### 3. Crear un Entorno Virtual (Recomendado)
+
+```bash
+# En Windows
+python -m venv venv
+venv\Scripts\activate
+
+# En macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 4. Instalar las Dependencias
+
+```bash
+pip install numpy pandas seaborn matplotlib scikit-learn
+```
+
+Estas bibliotecas son necesarias para el análisis de datos, visualización y modelado de machine learning.
+
+### 5. Obtener el Dataset
+
+El proyecto espera un archivo llamado `traffic_accidents.csv` en el mismo directorio del script. Puedes descargarlo desde el siguiente enlace:
+
+[https://www.kaggle.com/code/oktayrdeki/crash-type-prediction-eda-ml?select=traffic_accidents.csv](https://www.kaggle.com/code/oktayrdeki/crash-type-prediction-eda-ml?select=traffic_accidents.csv)
+
+> **Nota:** Es posible que necesites una cuenta de Kaggle para acceder a la descarga.
+
+### 6. Ejecutar el Código
+
+#### Opción 1: Usando Jupyter Notebook
+
+Instala Jupyter si no lo tienes:
+
+```bash
+pip install notebook
+```
+
+Ejecuta:
+
+```bash
+jupyter notebook
+```
+
+Esto abrirá el navegador. Carga el archivo `.ipynb` y ejecútalo celda por celda.
+
+#### Opción 2: Convertir a Script de Python
+
+Guarda el contenido del notebook en un archivo `main.py`, y luego ejecuta:
+
+```bash
+python main.py
+```
+
+Este script realiza:
+
+- Carga y análisis del dataset
+- Análisis descriptivo
+- Preprocesamiento (codificación, normalización, limpieza)
+- Entrenamiento de modelos (Random Forest, Decision Tree, KNN, MLP, SVC)
+- Optimización con `GridSearchCV`
+- Métricas de evaluación de modelos
+- Agrupamiento con KMeans
+- Visualización y evaluación de clusters
+
+### 7. Interpretación de los Resultados
+
+Después de la ejecución:
+
+- Verás métricas como: `accuracy`, `classification_report`, `confusion_matrix`
+- Resultados del agrupamiento con: `Silhouette Score`, `Calinski-Harabasz Score`, `Davies-Bouldin Score`
+- Visualizaciones de los clusters detectados por KMeans
+
+# Tecnologías Utilizadas
+
+- **Python**: Lenguaje de programación principal.  
+- **Pandas**: Para la manipulación y análisis de datos.  
+- **NumPy**: Para operaciones numéricas.  
+- **Seaborn**: Para la visualización de datos estadísticos.  
+- **Matplotlib**: Para la creación de gráficos y visualizaciones.  
+- **Scikit-learn (sklearn)**: Biblioteca de machine learning que incluye:
+  - `preprocessing`: Para la codificación de etiquetas y la normalización de datos.
+  - `tree`: Para el modelo de árbol de decisión.
+  - `linear_model`: Para el modelo de regresión logística.
+  - `neighbors`: Para el modelo KNN.
+  - `model_selection`: Para la división de datos y la búsqueda de cuadrícula (`GridSearchCV`).
+  - `ensemble`: Para el modelo de Random Forest.
+  - `metrics`: Para la evaluación del rendimiento del modelo (`accuracy`, `classification_report`, `confusion_matrix`, `silhouette_score`, `calinski_harabasz_score`, `davies_bouldin_score`).
+  - `neural_network`: Para el modelo de perceptrón multicapa (MLP).
+  - `svm`: Para el modelo de máquina de vectores de soporte (SVC).
+  - `cluster`: Para algoritmos de agrupamiento (`KMeans`, `DBSCAN`, `AgglomerativeClustering`).
+  - `decomposition`: Para la reducción de dimensionalidad (`PCA`).
+- **SciPy**: Para funciones de clustering jerárquico (`scipy.cluster.hierarchy`).
+
+---
+
+# Créditos o Autores
+
+- **García Pérez Dariana Mildred**  
+- **Maldonado González César Abdiel**  
+- **Valerio Carera Ricardo**  
+  *IPN*  
+- **Méndez Macías Rogelio Leonardo**  
+  *UAM Azcapotzalco*
+
