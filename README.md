@@ -137,6 +137,8 @@ Después de la ejecución:
 - **Maldonado González César Abdiel**  
 - **Valerio Carera Ricardo**  
   *IPN*  
-- **Méndez Macías Rogelio Leonardo**  
+- **Méndez Macías Rogelio Leonardo**
+- ## Connect with me
+[![LinkedIn](https://www.linkedin.com/in/rogelio-leonardo-mendez-macias-6286851ab/)
   *UAM Azcapotzalco*
 
