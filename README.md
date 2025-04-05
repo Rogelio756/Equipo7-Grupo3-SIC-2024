@@ -134,11 +134,9 @@ Después de la ejecución:
 # Créditos o Autores
 
 - **García Pérez Dariana Mildred**  
-- **Maldonado González César Abdiel**  
+- **[Maldonado González César Abdiel](https://www.linkedin.com/in/c%C3%A9sar-mg-7190a0171/)**  
 - **Valerio Carera Ricardo**  
   *IPN*  
-- **Méndez Macías Rogelio Leonardo**
-- ## Connect with me
-[![LinkedIn](https://www.linkedin.com/in/rogelio-leonardo-mendez-macias-6286851ab/)
+- **[Méndez Macías Rogelio Leonardo](https://www.linkedin.com/in/rogelio-leonardo-mendez-macias-6286851ab/)**  
   *UAM Azcapotzalco*
 
